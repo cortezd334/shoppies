@@ -27,8 +27,6 @@ function Search({ movies, setMovies }) {
             setMovies(json['Search'])})
     }
 
-    // console.log(movies)
-
     return(
         <Form className='form-inline' onSubmit={handleSubmit}>
             <Form.Row>

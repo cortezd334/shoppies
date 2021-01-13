@@ -1,0 +1,19 @@
+.container {
+    display: grid;
+    height: 100vh;
+    justify-content: center;
+    justify-items: center;
+    text-align: left;
+}
+
+.auto30{
+    grid-template-columns: repeat(auto-fit, 30rem);
+}
+
+.grid {
+    margin-bottom: 4.5rem!important;
+}
+/* .card {
+    display: flex;
+    flex-direction: column;
+} */

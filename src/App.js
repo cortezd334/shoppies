@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+// import React, { useEffect } from "react";
+import React, { useState } from "react";
+// import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
+import Search from './components/Search';
+import Movies from './components/Movies';
 
 function App() {
+
+  const [movies, setMovies] = useState([])
+
+  console.log(movies)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Search setMovies={setMovies}/>
+        <Movies movies={movies} />
+      {/* </Switch>
+    </Router> */}
     </div>
   );
 }

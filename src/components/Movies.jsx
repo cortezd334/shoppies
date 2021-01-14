@@ -34,9 +34,6 @@ function Movies({ movies, setNominations, nominations, props, setResults }) {
     }
 
     const clickHandler = (movie) => {
-        // 1. adds movie to Nominations
-        // button no longer works
-        // button to remove movie in Nominate
         console.log(nominations.length)
         nominations.length < 5 ? setNominations(prevNominations => ([...prevNominations, movie])) : handleShow()
     }

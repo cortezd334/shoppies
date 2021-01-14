@@ -10,9 +10,16 @@ function Nominations({ nominations, setNominations}) {
                 <Card.Body>
                     <Card.Title>{nom['Title']}</Card.Title>
                     <Card.Text>{nom['Year']}</Card.Text>
+                    <Button onClick={() => clickHandler(nom)} variant='info'>Remove</Button>
                 </Card.Body>
             </Card>
         })
+    }
+
+    const clickHandler = (movie) => {
+        const removeMov = nominations.filter(mov => mov['imdbID'] !== movie['imdbID'])
+        console.log(removeMov)
+        setNominations(removeMov)
     }
 
     return(

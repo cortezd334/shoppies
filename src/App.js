@@ -9,6 +9,7 @@ function App() {
 
   const [movies, setMovies] = useState([])
   const [nominations, setNominations] = useState([])
+  const [results, setResults] = useState(true)
 
   console.log(movies)
   console.log(nominations)
@@ -16,19 +17,21 @@ function App() {
   return (
     <div className="App">
         <Search setMovies={setMovies}/>
-        <Movies movies={movies} setNominations={setNominations} nominations={nominations}/>
+        {results ? 
+        <Movies movies={movies} setNominations={setNominations} nominations={nominations} setResults={setResults}/>
+        :
         <Nominations nominations={nominations} setNominations={setNominations}/>
-      {/* </Switch>
-    </Router> */}
+        }
+        {/* if I want to add the side bar {nominations.length > 0 && (<Nominations nominations={nominations} setNominations={setNominations}/>)} */}
     </div>
   );
 }
+// make 2 diff views
 
 export default App;
 
 // https://docs.google.com/document/d/1AZO0BZwn1Aogj4f3PDNe1mhq8pKsXZxtrG--EIbP_-w/edit#heading=h.c7xqfkhsqnd4
-// add movie to nomination list (disable button)
-// banner when 5 nominations
+// banner when 5 nominations (currently 6)
 // view nomination list
 // remove from nomination list
 // *would like to use id to make a hover or pop up option showing description (will need another api call in documentation)

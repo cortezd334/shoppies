@@ -17,7 +17,9 @@ function Nominations({ nominations, setNominations}) {
 
     return(
         <>
-        {showNominations()}
+            <div className='container-fluid auto30'>
+                {showNominations()}
+            </div>
         </>
     )
 }

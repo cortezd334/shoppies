@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 
-function Movies({ movies, setNominations, nominations, props }) {
+function Movies({ movies, setNominations, nominations, props, setResults }) {
 
     const [show, setShow] = useState(false)
 
@@ -38,7 +38,12 @@ function Movies({ movies, setNominations, nominations, props }) {
         // button no longer works
         // button to remove movie in Nominate
         console.log(nominations.length)
-        nominations.length < 6 ? setNominations(prevNominations => ([...prevNominations, movie])) : handleShow()
+        nominations.length < 5 ? setNominations(prevNominations => ([...prevNominations, movie])) : handleShow()
+    }
+
+    const handleNoms = () => {
+        setResults(false)
+        handleClose()
     }
     // Title, Year, imdbID
   
@@ -54,7 +59,7 @@ function Movies({ movies, setNominations, nominations, props }) {
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="outline-info" onClick={handleClose}>Cancel</Button>
-                <Button variant="info" >Go To Nominations</Button>
+                <Button variant="info" onClick={handleNoms}>Go To Nominations</Button>
             </Modal.Footer>
         </Modal>
         <div className='container-fluid auto30'>

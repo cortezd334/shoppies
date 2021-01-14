@@ -1,6 +1,7 @@
-.container {
+.container-fluid {
     display: grid;
     height: 100vh;
+    width: auto;
     justify-content: center;
     justify-items: center;
     text-align: left;
@@ -17,7 +18,3 @@
 .inactive {
     color: orange;
 }
-/* .card {
-    display: flex;
-    flex-direction: column;
-} */

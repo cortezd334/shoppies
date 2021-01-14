@@ -1,25 +1,35 @@
+import React, { useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 
-function Movies({ movies, setNominations, nominations }) {
+function Movies({ movies, setNominations, nominations, props }) {
+
+    const [show, setShow] = useState(false)
+
+    const handleShow = () => setShow(true)
+    const handleClose = () => setShow(false)
 
     console.log(movies)
 
     const showMovies = () => {
         return movies.map(mov => {
-            return <Card className='grid' key={mov['imdbID']}>
+            return <>
+            <Card className='grid' key={mov['imdbID']}>
                 <Card.Img variant='top' src={`${mov['Poster']}`}/>
                 <Card.Body>
                     <Card.Title>{mov['Title']}</Card.Title>
                     <Card.Text>{mov['Year']}</Card.Text>
-                    {nominations.find(movie => movie['imdbID'] == mov['imdbID']) ? 
-                    <Button className='inactive'>Movie Nominated</Button>
+                    {nominations.find(movie => movie['imdbID'] === mov['imdbID']) ? 
+                    <Button className='inactive' variant='info' disabled>Nominated</Button>
+                    // <Button className='inactive' variant='outline-info' disabled>Nominated</Button>
                     :
-                    <Button onClick={() => clickHandler(mov)}>Nominate Movie</Button>
+                    <Button onClick={() => clickHandler(mov)} variant='info'>Nominate Movie</Button>
                     }
                 </Card.Body>
             </Card>
+            </>
         })
     }
 
@@ -27,24 +37,31 @@ function Movies({ movies, setNominations, nominations }) {
         // 1. adds movie to Nominations
         // button no longer works
         // button to remove movie in Nominate
-        setNominations(prevNominations => ([...prevNominations, movie]))
+        console.log(nominations.length)
+        nominations.length < 6 ? setNominations(prevNominations => ([...prevNominations, movie])) : handleShow()
     }
     // Title, Year, imdbID
   
     return (
-      <div className='container auto30'>
-        {showMovies()}
-      </div>
+        <>
+        <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">Nomination Maximum Met</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <p>Only 5 movies can be nominated for The Shoppies.</p>
+                <p>If you would like to nominate this movie please remove a movie from your nominations.</p>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="outline-info" onClick={handleClose}>Cancel</Button>
+                <Button variant="info" >Go To Nominations</Button>
+            </Modal.Footer>
+        </Modal>
+        <div className='container-fluid auto30'>
+            {showMovies()}
+        </div>
+      </>
     );
   }
   
   export default Movies;
-
-//   function handleClick(res) {
-//     deleteRes(res)
-//     const filRes = user.reservations.filter(restaurant => restaurant.id !== res.id)
-//     console.log(filRes)
-//     setUser(prevUser => ({...prevUser, user:{ ...prevUser.user, reservations: filRes}}))
-// }
-
-// setUser(prevUser => ({...prevUser, user:{ ...prevUser.user, reservations: [...prevUser.user.reservations, json]}}))

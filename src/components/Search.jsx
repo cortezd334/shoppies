@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-function Search({ movies, setMovies }) {
+function Search({ movies, setMovies, setResults }) {
     
     const searchForm = {
         movie: ''
@@ -21,6 +21,8 @@ function Search({ movies, setMovies }) {
     function handleSubmit(e) {
         e.preventDefault()
 
+        setResults(true)
+
         fetch(api)
         .then(res => res.json())
         .then(json => {
@@ -31,7 +33,7 @@ function Search({ movies, setMovies }) {
         <Form className='form-inline' onSubmit={handleSubmit}>
             <Form.Row>
                 <Form.Group>
-                    <Form.Label className='item'>Movie</Form.Label>
+                    <Form.Label className='item'>Search Title</Form.Label>
                     <Form.Control type='text' value={form.movie} name='movie' onChange={handleChange} />
                 </Form.Group>
                 <Form.Group>

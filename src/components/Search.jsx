@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -11,6 +12,8 @@ function Search({ movies, setMovies, setResults }) {
     const [form, setForm] = useState(searchForm)
     
 
+    const history = useHistory()
+
     function handleChange(e) {
         let obj = {[e.target.name]: e.target.value}
         setForm(prevState => ({...prevState, ...obj}))
@@ -22,11 +25,14 @@ function Search({ movies, setMovies, setResults }) {
         e.preventDefault()
 
         setResults(true)
+        // history.push('/results')
 
         fetch(api)
         .then(res => res.json())
         .then(json => {
-            setMovies(json['Search'])})
+            setMovies(json['Search'])
+        })
+
     }
 
     return(

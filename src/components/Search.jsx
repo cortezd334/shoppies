@@ -13,10 +13,6 @@ function Search({ setMovies, setResults, props }) {
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true)
     const handleClose = () => setShow(false)
-    
-    console.log(form)
-    console.log('movieSearch', form.movie)
-    
 
     function handleChange(e) {
         let obj = {[e.target.name]: e.target.value}
@@ -37,7 +33,6 @@ function Search({ setMovies, setResults, props }) {
                 setMovies(json['Search'])
             })
         } else {
-            console.log(form.movie.length)
             handleShow()
         }
     }

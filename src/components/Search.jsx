@@ -19,7 +19,7 @@ function Search({ setMovies, setResults, props }) {
         setForm(prevState => ({...prevState, ...obj}))
     }
 
-    const api = `http://www.omdbapi.com/?apikey=941ec1b2&s=${form.movie}&type=movie`
+    const api = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB}&s=${form.movie}&type=movie`
 
     const handleSubmit = (e) => {
         e.preventDefault()

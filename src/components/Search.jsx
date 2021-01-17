@@ -14,14 +14,14 @@ function Search({ setMovies, setResults, props }) {
     const handleShow = () => setShow(true)
     const handleClose = () => setShow(false)
 
-    function handleChange(e) {
+    const handleChange = (e) => {
         let obj = {[e.target.name]: e.target.value}
         setForm(prevState => ({...prevState, ...obj}))
     }
 
     const api = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB}&s=${form.movie}&type=movie`
 
-    function handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault()
 
         if (form.movie.length > 0) {

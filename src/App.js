@@ -43,8 +43,5 @@ function App() {
 
 export default App;
 
-//consistent functions
-
-
 // https://docs.google.com/document/d/1AZO0BZwn1Aogj4f3PDNe1mhq8pKsXZxtrG--EIbP_-w/edit#heading=h.c7xqfkhsqnd4
 

@@ -11,7 +11,8 @@ body {
 
 .sub {
   text-align: center;
-  color: white;;
+  color: white;
+  font-style: italic;
 }
 
 .btn.btn-outline {

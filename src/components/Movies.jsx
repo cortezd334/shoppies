@@ -59,9 +59,14 @@ function Movies({ movies, setNominations, nominations, props, setResults }) {
                 <Button variant="info" onClick={handleNoms}>Go To Nominations</Button>
             </Modal.Footer>
         </Modal>
-        <div className='container-fluid auto30'>
-            {showMovies()}
-        </div>
+        {movies.length > 0 ?
+                (<div className='container-fluid auto30'>
+                    {showMovies()}
+                </div>)
+                :
+                <h2>Search to see movies results.</h2>
+            }
+
       </>
     );
   }

@@ -16,16 +16,15 @@ function Movies({ movies, setNominations, nominations, props, setResults }) {
     const showMovies = () => {
         return movies.map(mov => {
             return <>
-            <Card className='grid' key={mov['imdbID']}>
+            <Card className='grid sha' key={mov['imdbID']}>
                 <Card.Img variant='top' src={`${mov['Poster']}`}/>
                 <Card.Body>
                     <Card.Title>{mov['Title']}</Card.Title>
                     <Card.Text>{mov['Year']}</Card.Text>
                     {nominations.find(movie => movie['imdbID'] === mov['imdbID']) ? 
-                    <Button className='inactive' variant='info' disabled>Nominated</Button>
-                    // <Button className='inactive' variant='outline-info' disabled>Nominated</Button>
+                    <Button className='inactive' variant='dark' disabled>Nominated</Button>
                     :
-                    <Button onClick={() => clickHandler(mov)} variant='info'>Nominate Movie</Button>
+                    <Button onClick={() => clickHandler(mov)} variant='dark'>Nominate Movie</Button>
                     }
                 </Card.Body>
             </Card>
@@ -42,7 +41,6 @@ function Movies({ movies, setNominations, nominations, props, setResults }) {
         setResults(false)
         handleClose()
     }
-    // Title, Year, imdbID
   
     return (
         <>
@@ -55,8 +53,8 @@ function Movies({ movies, setNominations, nominations, props, setResults }) {
                 <p>If you would like to nominate this movie please remove a movie from your nominations.</p>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="outline-info" onClick={handleClose}>Cancel</Button>
-                <Button variant="info" onClick={handleNoms}>Go To Nominations</Button>
+                <Button variant="outline-dark" onClick={handleClose}>Cancel</Button>
+                <Button variant="dark" onClick={handleNoms}>Go To Nominations</Button>
             </Modal.Footer>
         </Modal>
         {movies.length > 0 ?
@@ -64,7 +62,7 @@ function Movies({ movies, setNominations, nominations, props, setResults }) {
                     {showMovies()}
                 </div>)
                 :
-                <h2>Search to see movies results.</h2>
+                <h2 className='sub'>Search to see movies results.</h2>
             }
 
       </>

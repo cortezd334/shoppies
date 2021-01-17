@@ -27,13 +27,13 @@ function App() {
       <Router>
           {results ? 
           <Route path='/'>
-            <Button className='switch' variant="outline" onClick={toNoms}>View Nominations</Button>
-            <Movies movies={movies} setNominations={setNominations} nominations={nominations} setResults={setResults}/>
+            (<Button className='switch' variant="outline" onClick={toNoms}>View Nominations</Button>
+            <Movies movies={movies} setNominations={setNominations} nominations={nominations} setResults={setResults}/>)
           </Route>
           :
           <Route path='/'>
-            <Button className='switch' variant="outline" onClick={toMovs}>View Search Results</Button>
-            <Nominations nominations={nominations} setNominations={setNominations}/>
+            (<Button className='switch' variant="outline" onClick={toMovs}>View Search Results</Button>
+            <Nominations nominations={nominations} setNominations={setNominations}/>)
           </Route>
           }
       </Router>

@@ -3,8 +3,8 @@
 @import './nominations.css';
 
 body {
-  margin: 5rem;
-  padding: 10rem;
+  margin: 2rem;
+  padding: 2rem;
   height: 100vh;
   background-color: black !important;
 }

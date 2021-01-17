@@ -1,6 +1,5 @@
 .container-fluid {
     display: grid;
-    height: 100vh;
     width: auto;
     justify-content: center;
     justify-items: center;
@@ -8,7 +7,7 @@
 }
 
 .auto30{
-    grid-template-columns: repeat(auto-fit, 30rem);
+    grid-template-columns: repeat(auto-fit, 25rem);
 }
 
 .grid {

@@ -12,7 +12,7 @@ function Nominations({ nominations, setNominations}) {
                 <Card.Body className='nomBod'>
                     <Card.Title>{nom['Title']}</Card.Title>
                     <Card.Text>{nom['Year']}</Card.Text>
-                    <Button onClick={() => clickHandler(nom)} variant='info'>Remove</Button>
+                    <Button onClick={() => clickHandler(nom)} variant='dark'>Remove</Button>
                 </Card.Body>
             </Card>
         })
@@ -30,7 +30,7 @@ function Nominations({ nominations, setNominations}) {
                     {showNominations()}
                 </div>)
                 :
-                <h2>Please search and nominate movies.</h2>
+                <h2 className='sub'>Please search and nominate movies.</h2>
             }
         </>
     )

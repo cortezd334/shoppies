@@ -3,5 +3,42 @@
 @import './nominations.css';
 
 body {
-  margin: 0;
+  margin: 5rem;
+  padding: 10rem;
+  height: 100vh;
+  background-color: black !important;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  text-align: center;
 }
+
+.sub {
+  text-align: center;
+  color: white;
+}
+
+.btn.btn-outline {
+  border: 1px solid gold;
+  color: gold;
+}
+
+.btn.btn-outline:hover {
+  border: 1px solid black;
+  background-color: gold;
+  color: black;
+}
+
+/* button {
+  color: gold;
+} */
+
+/* font-family: 'Bungee Outline', cursive;
+-font-family: 'Bungee Shade', cursive;
+-font-family: 'Monoton', cursive;
+-font-family: 'Codystar', cursive;
+•font-family: 'Sonsie One', cursive;
+font-family: 'Cinzel Decorative', cursive;
+font-family: 'Erica One', cursive;
+font-family: 'Geostar Fill', cursive;
+font-family: 'Wallpoet', cursive; */

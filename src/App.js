@@ -22,22 +22,23 @@ function App() {
     setResults(true)
   }
 
-  console.log(results)
-
+  // console.log(results)
+  console.log('results', results)
   return (
     <div className="App">
-      <h1>The Shoppies</h1>
-      <h2>Nominate your top 5 movies for The Shoppies</h2>
+      <h1 id='heading'>The Shoppies</h1>
+      <h2 className='sub'>Nominate your top 5 movies for The Shoppies</h2>
       <Search setMovies={setMovies} setResults={setResults}/>
+      {/* <searchAlert /> */}
       <Router>
           {results ? 
           <Route path='/'>
-            <Button variant="dark" onClick={toNoms}>View Nominations</Button>
+            <Button className='switch' variant="outline" onClick={toNoms}>View Nominations</Button>
             <Movies movies={movies} setNominations={setNominations} nominations={nominations} setResults={setResults}/>
           </Route>
           :
           <Route path='/'>
-            <Button variant="dark" onClick={toMovs}>View Search Results</Button>
+            <Button className='switch' variant="outline" onClick={toMovs}>View Search Results</Button>
             <Nominations nominations={nominations} setNominations={setNominations}/>
           </Route>
           }
@@ -49,17 +50,10 @@ function App() {
 
 export default App;
 
-// with routes I no longer get results, need to find another way to switch btwn the two
-// or take the turnery out
-
-//results set to false on max 5 goes to Noms
-//possible setResults(false) onClick to Noms Link?
-
-//now won't go to search results when submit 
-//history.push not working in function
-//if can get above to work can setResults(true)
-
-// add a no nomination/result message when empty
+//empty search length of undefined movies 49
+//buttons on cards
+//consistent functions
+//not displaying alert may have to do with the render part
 
 
 // https://docs.google.com/document/d/1AZO0BZwn1Aogj4f3PDNe1mhq8pKsXZxtrG--EIbP_-w/edit#heading=h.c7xqfkhsqnd4
@@ -78,3 +72,4 @@ export default App;
         <Route path='/nominations'>
             <Nominations nominations={nominations} setNominations={setNominations}/>
         </Route> */}
+

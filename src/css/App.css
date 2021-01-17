@@ -1,1 +1,44 @@
+#heading {
+    font-size: 5rem;
+    font-family: 'Bungee Shade', cursive;
+    color: gold;
+    text-align: center;
+    margin: 3rem;
+}
 
+.form-inline {
+    box-sizing: border-box;
+    margin: 2rem;
+    padding: 1rem;
+    justify-content: center;
+    color: gold;
+
+}
+
+.form-label {
+    padding: 1rem;
+    font-size: 27px;
+}
+
+.form-group {
+    padding: .5rem;
+}
+
+.switch {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+}
+
+.switch:hover {
+    box-shadow:  2px 0 gold, 0 2px 0 gold, 0 0 1px gold, 0 2px 20px gold;
+}
+
+.sha {
+    box-shadow:  2px 0 gold, 0 2px 0 gold, 0 0 1px gold, 0 2px 20px gold;
+  }
+
+/* font-family: 'Bungee Shade', cursive;
+font-family: 'Monoton', cursive;
+font-family: 'Codystar', cursive;
+font-family: 'Sonsie One', cursive; */

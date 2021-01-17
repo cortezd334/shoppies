@@ -2,8 +2,6 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 function Nominations({ nominations, setNominations}) {
-   
-    console.log(nominations)
 
     const showNominations = () => {
         return nominations.map(nom => {

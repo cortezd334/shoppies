@@ -7,15 +7,11 @@ body {
   padding: 10rem;
   height: 100vh;
   background-color: black !important;
-  justify-content: center;
-  justify-self: center;
-  justify-items: center;
-  text-align: center;
 }
 
 .sub {
   text-align: center;
-  color: white;
+  color: white;;
 }
 
 .btn.btn-outline {
@@ -28,17 +24,3 @@ body {
   background-color: gold;
   color: black;
 }
-
-/* button {
-  color: gold;
-} */
-
-/* font-family: 'Bungee Outline', cursive;
--font-family: 'Bungee Shade', cursive;
--font-family: 'Monoton', cursive;
--font-family: 'Codystar', cursive;
-•font-family: 'Sonsie One', cursive;
-font-family: 'Cinzel Decorative', cursive;
-font-family: 'Erica One', cursive;
-font-family: 'Geostar Fill', cursive;
-font-family: 'Wallpoet', cursive; */

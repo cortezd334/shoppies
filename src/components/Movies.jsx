@@ -11,8 +11,6 @@ function Movies({ movies, setNominations, nominations, props, setResults }) {
     const handleShow = () => setShow(true)
     const handleClose = () => setShow(false)
 
-    console.log(movies)
-
     const showMovies = () => {
         return movies.map(mov => {
             return <>
@@ -33,7 +31,6 @@ function Movies({ movies, setNominations, nominations, props, setResults }) {
     }
 
     const clickHandler = (movie) => {
-        console.log(nominations.length)
         nominations.length < 5 ? setNominations(prevNominations => ([...prevNominations, movie])) : handleShow()
     }
 
@@ -58,13 +55,12 @@ function Movies({ movies, setNominations, nominations, props, setResults }) {
             </Modal.Footer>
         </Modal>
         {movies.length > 0 ?
-                (<div className='container-fluid auto30'>
-                    {showMovies()}
-                </div>)
-                :
-                <h2 className='sub'>Search to see movies results.</h2>
-            }
-
+            (<div className='container-fluid auto30'>
+                {showMovies()}
+            </div>)
+            :
+            <h2 className='sub'>Search to see movies results.</h2>
+        }
       </>
     );
   }

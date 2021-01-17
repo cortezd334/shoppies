@@ -13,8 +13,7 @@ function Movies({ movies, setNominations, nominations, props, setResults }) {
 
     const showMovies = () => {
         return movies.map(mov => {
-            return <>
-            <Card className='grid sha' key={mov['imdbID']}>
+            return <Card className='grid sha' key={mov['imdbID']}>
                 <Card.Img variant='top' src={`${mov['Poster']}`}/>
                 <Card.Body>
                     <Card.Title>{mov['Title']}</Card.Title>
@@ -26,7 +25,6 @@ function Movies({ movies, setNominations, nominations, props, setResults }) {
                     }
                 </Card.Body>
             </Card>
-            </>
         })
     }
 

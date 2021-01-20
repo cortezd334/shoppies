@@ -8,8 +8,9 @@
     position: -webkit-sticky;
     top: 0px;
     padding: 1rem;
-    background: black;
     z-index: 1;
+    background: black;
+    /* display: inline-block; */
 }
 
 .form-inline {

@@ -54,4 +54,4 @@ User Can:
 
 ## Contributions
 
-[Danira Cortez] (daniracortez.com)
+[Danira Cortez](daniracortez.com)

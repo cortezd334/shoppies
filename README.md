@@ -54,4 +54,8 @@ User Can:
 
 ## Contributions
 
-[Danira Cortez](https://daniracortez.com)
+Danira Cortez
+https://daniracortez.com
+https://www.linkedin.com/in/daniracortez/
+https://github.com/cortezd334
+https://medium.com/@cortezd334
